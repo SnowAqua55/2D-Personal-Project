@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName = "CustomRandomTile", menuName = "CustomTile/Custom Random Tile")]
+[CreateAssetMenu(fileName = "RandomTile", menuName = "CustomTile/Custom Random Tile")]
 public class CustomRandomTile : TileBase
 {
     public TileBase[] randomTiles;
