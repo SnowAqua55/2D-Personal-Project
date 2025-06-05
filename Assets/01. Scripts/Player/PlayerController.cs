@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         Move();
         _curMoveSpeed = baseMoveSpeed + bonusMoveSpeed;
     }
