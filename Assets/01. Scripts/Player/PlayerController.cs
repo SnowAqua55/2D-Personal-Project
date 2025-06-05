@@ -42,13 +42,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && GameManager.Instance.Player.movePossible)
         {
             _moveInput = context.ReadValue<Vector2>();
         }
         else if (context.canceled)
         {
             _moveInput = Vector2.zero;
+            GameManager.Instance.Player.movePossible = false;
         }
     }
 
