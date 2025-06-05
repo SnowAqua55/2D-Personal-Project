@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abf523a-3c4f-4f62-8aed-894e85f1fc72" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +46,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -110,7 +113,7 @@
       <updated>1748932143808</updated>
       <workItem from="1748932145605" duration="4547000" />
       <workItem from="1749018133784" duration="628000" />
-      <workItem from="1749036781573" duration="13778000" />
+      <workItem from="1749036781573" duration="20259000" />
     </task>
     <servers />
   </component>
@@ -144,5 +147,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
