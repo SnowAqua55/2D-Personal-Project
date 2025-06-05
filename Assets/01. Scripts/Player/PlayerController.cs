@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Moving")]
     public float jumpForce;
     public float baseMoveSpeed;
+    public float bonusMoveSpeed;
     private float _curMoveSpeed;
     public float jumpRayDistance;
     public LayerMask groundLayerMask;
@@ -15,32 +16,28 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Vector2 _moveInput;
     private Vector2 _moveDirection;
+    private float _lastDirection;
+    private SpriteRenderer _sprite;
 
     private bool _isGround;
     private int _isMove;
-    private int _animDirection;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
     {
-        _isMove = Animator.StringToHash("isMove");
-        _animDirection = Animator.StringToHash("Direction");
-        // front:0 (down)
-        // back:1 (up)
-        // left:2
-        // right:3
 
-        _curMoveSpeed = baseMoveSpeed;
     }
 
     private void Update()
     {
         Move();
+        _curMoveSpeed = baseMoveSpeed + bonusMoveSpeed;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -48,23 +45,27 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             _moveInput = context.ReadValue<Vector2>();
-            // _animator.SetBool(_isMove, true);
         }
         else if (context.canceled)
         {
             _moveInput = Vector2.zero;
-            // _animator.SetBool(_isMove, false);
         }
     }
 
     private void Move()
     {
-        _moveDirection = transform.forward * _moveInput.y + transform.right * _moveInput.x;
-        _moveDirection *= _curMoveSpeed;
-    }
+        // _moveDirection = transform.up * _moveInput.y + transform.right * _moveInput.x;
+        // _moveDirection *= _curMoveSpeed;
+        //
+        // _rigidbody.velocity = _moveDirection;
 
-    private void AnimDirection()
-    {
-        
+        _rigidbody.velocity = _moveInput * _curMoveSpeed;
+        if (_moveInput.x != 0f)
+        {
+            _lastDirection = Math.Sign(_moveInput.x);
+        }
+
+        bool isLeft = _lastDirection < 0f;
+        _sprite.flipX = isLeft;
     }
 }
