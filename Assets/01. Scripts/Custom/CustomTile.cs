@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class CustomRandomTile : TileBase
 {
     public TileBase[] randomTiles;
+    
 
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
