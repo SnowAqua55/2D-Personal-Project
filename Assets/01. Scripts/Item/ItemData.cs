@@ -8,6 +8,19 @@ public enum ItemType
     Material,
     Etc
 }
+
+public enum ConsumableType
+{
+    Health,
+    Mana
+}
+public class ItemDataConsumable
+{
+    public ConsumableType type;
+    public float value;
+}
+
+[CreateAssetMenu(fileName = "Item", menuName = "ScriptableObject/New Item")]
 public class ItemData : ScriptableObject
 {
     [Header("Info")]
@@ -20,4 +33,7 @@ public class ItemData : ScriptableObject
     [Header("Stack")]
     public bool canStack;
     public int maxStackAmount;
+
+    [Header("Consumable")]
+    public ItemDataConsumable[] consumables;
 }
