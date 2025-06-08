@@ -2,6 +2,7 @@ using UnityEngine;
 
 public enum ItemType
 {
+    Money,
     Equipable,
     Consumable,
     Resource,

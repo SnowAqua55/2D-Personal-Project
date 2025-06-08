@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67fd14a602894c44c9be35c221ab79c9, type: 3}
-  m_Name: StoneShard
+  m_Name: Money_Coin
   m_EditorClassIdentifier: 
-  displayName: "\uB3CC \uC870\uAC01"
-  description: "\uD3C9\uBC94\uD55C \uB3CC\uC758 \uC870\uAC01"
-  type: 5
+  displayName: "\uC9C0\uD3D0"
+  description: "\uB9CE\uC740 \uB3C8"
+  type: 0
   icon: {fileID: 0}
   dropPrefab: {fileID: 0}
-  canStack: 1
-  maxStackAmount: 999
+  canStack: 0
+  maxStackAmount: 0
