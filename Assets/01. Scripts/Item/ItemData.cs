@@ -15,6 +15,8 @@ public enum ConsumableType
     Health,
     Mana
 }
+
+[Serializable]
 public class ItemDataConsumable
 {
     public ConsumableType type;
