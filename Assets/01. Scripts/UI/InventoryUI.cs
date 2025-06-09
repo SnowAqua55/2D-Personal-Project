@@ -18,6 +18,10 @@ public class InventoryUI : MonoBehaviour
 	{
 		_controller = GameManager.Instance.Player.Controller;
 		_condition = GameManager.Instance.Player.Condition;
+
+		_controller.Inventory += InventoryToggle;
+		_controller.Inventory += CursorToggle;
+		_controller.Inventory += MovePossibleToggle;
 		
 		inventoryWindow.SetActive(false);
 		slots = new ItemSlot[slotPanel.childCount];
@@ -28,16 +32,34 @@ public class InventoryUI : MonoBehaviour
 			slots[i].index = i;
 			slots[i].inventory = this;
 		}
-	}
-	
-	void Update()
-	{
 		
+		ClearSelectedSlotInfo();
 	}
 
 	void ClearSelectedSlotInfo()
 	{
 		selectedItemName.text = string.Empty;
 		selectedItemDesc.text = string.Empty;
+	}
+
+	public void InventoryToggle()
+	{
+		inventoryWindow.SetActive(!inventoryWindow.activeInHierarchy);
+	}
+
+	public void CursorToggle()
+	{
+		if (inventoryWindow.activeInHierarchy)
+			Cursor.lockState = CursorLockMode.None;
+		else
+			Cursor.lockState = CursorLockMode.Locked;
+	}
+
+	public void MovePossibleToggle()
+	{
+		if (inventoryWindow.activeInHierarchy)
+			GameManager.Instance.Player.movePossible = false;
+		else
+			GameManager.Instance.Player.movePossible = true;
 	}
 }

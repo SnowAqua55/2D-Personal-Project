@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Moving")]
-    public float jumpForce;
     public float baseMoveSpeed;
     public float bonusMoveSpeed;
     private float _curMoveSpeed;
-    public float jumpRayDistance;
-    public LayerMask groundLayerMask;
 
+    public Action Inventory;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
     private Vector2 _moveInput;
@@ -31,12 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-
-    }
-
-    private void Update()
-    {
-
+        GameManager.Instance.Player.movePossible = true;
     }
 
     private void FixedUpdate()
@@ -54,7 +47,6 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             _moveInput = Vector2.zero;
-            GameManager.Instance.Player.movePossible = false;
         }
     }
 
@@ -73,5 +65,13 @@ public class PlayerController : MonoBehaviour
 
         bool isLeft = _lastDirection < 0f;
         _sprite.flipX = isLeft;
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Inventory?.Invoke();
+        }
     }
 }

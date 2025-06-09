@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6abf523a-3c4f-4f62-8aed-894e85f1fc72" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2D Personal Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2D Personal Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00. Scenes/Built_Scenes/01. Dev Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00. Scenes/Built_Scenes/01. Dev Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00. Scenes/Creator_Scenes/UI_Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00. Scenes/Creator_Scenes/UI_Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Manager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/UI/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/UI/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/94. Input_System/Player Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/94. Input_System/Player Input.inputactions" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +28,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/Custom/CustomTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerCondition.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -112,6 +121,9 @@
       <workItem from="1748932145605" duration="4547000" />
       <workItem from="1749018133784" duration="628000" />
       <workItem from="1749036781573" duration="20259000" />
+      <workItem from="1749427357346" duration="1754000" />
+      <workItem from="1749431590234" duration="3287000" />
+      <workItem from="1749436875329" duration="2416000" />
     </task>
     <servers />
   </component>
