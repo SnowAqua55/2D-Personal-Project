@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float bonusMoveSpeed;
     private float _curMoveSpeed;
 
+    public Action InventoryOriginal;
     public Action Inventory;
     private Animator _animator;
     private Rigidbody2D _rigidbody;
@@ -29,7 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.Player.movePossible = true;
+        CharacterManager.Instance.Player.movePossible = true;
+        Action:Inventory = InventoryOriginal;
     }
 
     private void FixedUpdate()
@@ -40,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.performed && GameManager.Instance.Player.movePossible)
+        if (context.performed && CharacterManager.Instance.Player.movePossible)
         {
             _moveInput = context.ReadValue<Vector2>();
         }
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             Inventory?.Invoke();
+            _moveInput = Vector2.zero;
         }
     }
 }
