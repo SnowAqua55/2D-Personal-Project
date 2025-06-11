@@ -12,12 +12,18 @@ public class Player : MonoBehaviour
     public Action GetItem;
     // public List<ItemData> InventoryList = new List<ItemData>();
 
-    public ItemData[] inventoryArray = new ItemData[2];
+    public ItemData[] inventoryArray;
 
     public bool movePossible;
 
     private void Awake()
     {
         CharacterManager.Instance.Player = this;
+        inventoryArray = new ItemData[2];
+    }
+
+    private void Update()
+    {
+        CharacterManager.Instance.Player.InvenUI.InventoryCheck();
     }
 }

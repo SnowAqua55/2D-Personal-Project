@@ -21,7 +21,7 @@ public class InventoryUI : MonoBehaviour
         _inventoryUI.SetActive(!_inventoryUI.activeInHierarchy);
     }
 
-    public void AddItem(ItemObject obj, ItemData Data)
+    public bool AddItem(ItemObject obj, ItemData Data)
     {
         // CharacterManager.Instance.Player.InventoryList + Data;
         for (int i = 0; i < CharacterManager.Instance.Player.inventoryArray.Length; i++)
@@ -29,19 +29,16 @@ public class InventoryUI : MonoBehaviour
             if (CharacterManager.Instance.Player.inventoryArray[i] == null)
             {
                 CharacterManager.Instance.Player.inventoryArray[i] = Data;
-                Destroy(obj.gameObject);
-                return;
-            }
-            else
-            {
-                Debug.Log("인벤토리가 가득 찼습니다");
-                return;
+                return true;
             }
         }
+
+        Debug.Log("인벤토리가 가득 찼습니다");
+        return false;
     }
 
     public void InventoryCheck()
     {
-        Debug.Log($"{CharacterManager.Instance.Player.inventoryArray[0]}\n{CharacterManager.Instance.Player.inventoryArray[1]}");
+        Debug.Log($"1번 슬롯: {CharacterManager.Instance.Player.inventoryArray[0]}\n2번 슬롯: {CharacterManager.Instance.Player.inventoryArray[1]}");
     }
 }

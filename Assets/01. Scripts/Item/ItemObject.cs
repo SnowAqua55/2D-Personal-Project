@@ -18,8 +18,8 @@ public class ItemObject : MonoBehaviour, IGetItem
 
     public void OnInteraction()
     {
-        CharacterManager.Instance.Player.itemData = data;
-        CharacterManager.Instance.Player.GetItem?.Invoke();
+        // CharacterManager.Instance.Player.itemData = data;
+        // CharacterManager.Instance.Player.GetItem?.Invoke();
     }
     
     
