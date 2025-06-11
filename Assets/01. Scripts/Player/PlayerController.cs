@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
+        CharacterManager.Instance.Player.Controller = this;
+        Action:Inventory = InventoryOriginal;
     }
 
     private void Start()
     {
         CharacterManager.Instance.Player.movePossible = true;
-        Action:Inventory = InventoryOriginal;
+        
     }
 
     private void FixedUpdate()

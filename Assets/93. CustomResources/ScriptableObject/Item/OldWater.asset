@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fd14a602894c44c9be35c221ab79c9, type: 3}
   m_Name: OldWater
   m_EditorClassIdentifier: 
-  displayName: "\uB3CC \uC870\uAC01"
-  description: "\uD3C9\uBC94\uD55C \uB3CC\uC758 \uC870\uAC01"
+  displayName: "\uC624\uB798\uB41C \uBB3C"
+  displayDesc: "\uC544\uC8FC \uC624\uB798\uB41C \uBB3C\uC785\uB2C8\uB2E4"
   type: 5
   icon: {fileID: 0}
   dropPrefab: {fileID: 0}
   canStack: 1
   maxStackAmount: 999
+  consumables: []

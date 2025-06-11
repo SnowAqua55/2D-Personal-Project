@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    private GameObject _inventoryUI;
+    public GameObject _inventoryUI;
+
+    private void Awake()
+    {
+        CharacterManager.Instance.Player.InvenUI = this;
+    }
 
     private void Start()
     {
         CharacterManager.Instance.Player.Controller.InventoryOriginal += InventoryToggle;
-        CharacterManager.Instance.Player.GetItem += AddItem;
+        _inventoryUI.SetActive(false);
     }
 
     private void InventoryToggle()
@@ -16,18 +21,27 @@ public class InventoryUI : MonoBehaviour
         _inventoryUI.SetActive(!_inventoryUI.activeInHierarchy);
     }
 
-    private void AddItem()
+    public void AddItem(ItemObject obj, ItemData Data)
     {
-        ItemData Data = CharacterManager.Instance.Player.itemData;
-
         // CharacterManager.Instance.Player.InventoryList + Data;
-        for (int i = 0; i < CharacterManager.Instance.Player.InventoryArray.Length; i++)
+        for (int i = 0; i < CharacterManager.Instance.Player.inventoryArray.Length; i++)
         {
-            if (CharacterManager.Instance.Player.InventoryArray[i] == null)
+            if (CharacterManager.Instance.Player.inventoryArray[i] == null)
             {
-                CharacterManager.Instance.Player.InventoryArray[i] = Data;
-                break;
+                CharacterManager.Instance.Player.inventoryArray[i] = Data;
+                Destroy(obj.gameObject);
+                return;
+            }
+            else
+            {
+                Debug.Log("인벤토리가 가득 찼습니다");
+                return;
             }
         }
+    }
+
+    public void InventoryCheck()
+    {
+        Debug.Log($"{CharacterManager.Instance.Player.inventoryArray[0]}\n{CharacterManager.Instance.Player.inventoryArray[1]}");
     }
 }

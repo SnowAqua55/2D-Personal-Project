@@ -15,20 +15,20 @@ public class PlayerFn : MonoBehaviour
         _playerTransform = transform;
     }
 
-    private void FixedUpdate()
-    {
-        Collider2D[] pullingItemsArray = Physics2D.OverlapCircleAll(_playerTransform.position, pullRadius, itemLayer);
-
-        if (pullingItemsArray != null)
-        {
-            for (int i = 0; i < pullingItemsArray.Length; i++)
-            {
-                Collider2D pulledItem = pullingItemsArray[i];
-                Rigidbody2D itemRb = pulledItem.GetComponent<Rigidbody2D>();
-                Vector2 pullingToPlayer = (Vector2)_playerTransform.position - (Vector2)itemRb.transform.position;
-            }
-        }
-    }
+    // private void FixedUpdate()
+    // {
+    //     Collider2D[] pullingItemsArray = Physics2D.OverlapCircleAll(_playerTransform.position, pullRadius, itemLayer);
+    //
+    //     if (pullingItemsArray != null)
+    //     {
+    //         for (int i = 0; i < pullingItemsArray.Length; i++)
+    //         {
+    //             Collider2D pulledItem = pullingItemsArray[i];
+    //             Rigidbody2D itemRb = pulledItem.GetComponent<Rigidbody2D>();
+    //             Vector2 pullingToPlayer = (Vector2)_playerTransform.position - (Vector2)itemRb.transform.position;
+    //         }
+    //     }
+    // }
 
     // 플레이어와 아이템이 충돌했을 때
     
@@ -50,5 +50,27 @@ public class PlayerFn : MonoBehaviour
         // 미리 검사한 인벤토리 정보에 해당 아이템을 추가
 
         // 아이템 획득 후 드롭되어 있는 아이템 오브젝트는 Destroy
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
+        {
+            ItemObject obj = other.gameObject.GetComponent<ItemObject>();
+            ItemData Data = obj.data;
+            if (CharacterManager.Instance != null)
+            {
+                Debug.Log("캐매 인스턴스 True");
+                if (CharacterManager.Instance.Player != null)
+                {
+                    Debug.Log("플레이어 True");
+                    if (CharacterManager.Instance.Player.InvenUI != null)
+                    {
+                        Debug.Log("인벤UI True");
+                    }
+                }
+            }
+            CharacterManager.Instance.Player.InvenUI.AddItem(obj, Data);
+        }
     }
 }

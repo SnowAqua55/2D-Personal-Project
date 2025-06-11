@@ -6,12 +6,13 @@ public class Player : MonoBehaviour
 {
     public PlayerController Controller;
     public PlayerCondition Condition;
+    public InventoryUI InvenUI;
 
     public ItemData itemData;
     public Action GetItem;
-    public List<ItemData> InventoryList = new List<ItemData>();
+    // public List<ItemData> InventoryList = new List<ItemData>();
 
-    public ItemData[] InventoryArray = new ItemData[21];
+    public ItemData[] inventoryArray = new ItemData[2];
 
     public bool movePossible;
 
