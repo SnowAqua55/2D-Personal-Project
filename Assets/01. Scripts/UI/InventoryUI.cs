@@ -1,70 +1,33 @@
-using TMPro;
+using System;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-	public ItemSlot[] slots;
-	public GameObject inventoryWindow;
-	public Transform slotPanel;
+    private GameObject _inventoryUI;
 
-	[Header("Select Item")]
-	public TextMeshProUGUI selectedItemName;
-	public TextMeshProUGUI selectedItemDesc;
+    private void Start()
+    {
+        CharacterManager.Instance.Player.Controller.InventoryOriginal += InventoryToggle;
+        CharacterManager.Instance.Player.GetItem += AddItem;
+    }
 
-	private PlayerController _controller;
-	private PlayerCondition _condition;
-	
-	void Start()
-	{
-		_controller = CharacterManager.Instance.Player.Controller;
-		_condition = CharacterManager.Instance.Player.Condition;
+    private void InventoryToggle()
+    {
+        _inventoryUI.SetActive(!_inventoryUI.activeInHierarchy);
+    }
 
-		_controller.InventoryOriginal += InventoryToggle;
-		_controller.InventoryOriginal += CursorToggle;
-		_controller.InventoryOriginal += MovePossibleToggle;
-		
-		inventoryWindow.SetActive(false);
-		slots = new ItemSlot[slotPanel.childCount];
+    private void AddItem()
+    {
+        ItemData Data = CharacterManager.Instance.Player.itemData;
 
-		for (int i = 0; i < slots.Length; i++)
-		{
-			slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
-			slots[i].index = i;
-			slots[i].inventory = this;
-		}
-		
-		ClearSelectedSlotInfo();
-	}
-
-	void ClearSelectedSlotInfo()
-	{
-		selectedItemName.text = string.Empty;
-		selectedItemDesc.text = string.Empty;
-	}
-
-	public void InventoryToggle()
-	{
-		inventoryWindow.SetActive(!inventoryWindow.activeInHierarchy);
-	}
-
-	public void CursorToggle()
-	{
-		if (inventoryWindow.activeInHierarchy)
-			Cursor.lockState = CursorLockMode.None;
-		else
-			Cursor.lockState = CursorLockMode.Locked;
-	}
-
-	public void MovePossibleToggle()
-	{
-		if (inventoryWindow.activeInHierarchy)
-			CharacterManager.Instance.Player.movePossible = false;
-		else
-			CharacterManager.Instance.Player.movePossible = true;
-	}
-
-	void GetItem()
-	{
-
-	}
+        // CharacterManager.Instance.Player.InventoryList + Data;
+        for (int i = 0; i < CharacterManager.Instance.Player.InventoryArray.Length; i++)
+        {
+            if (CharacterManager.Instance.Player.InventoryArray[i] == null)
+            {
+                CharacterManager.Instance.Player.InventoryArray[i] = Data;
+                break;
+            }
+        }
+    }
 }
