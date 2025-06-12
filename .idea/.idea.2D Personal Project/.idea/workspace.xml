@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6abf523a-3c4f-4f62-8aed-894e85f1fc72" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2D Personal Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2D Personal Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00. Scenes/Built_Scenes/01. Dev Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00. Scenes/Built_Scenes/01. Dev Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Item/ItemObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/UI/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01. Scripts/UI/InventoryUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/UI/ItemSlot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01. Scripts/UI/ItemSlot.cs.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="6abf523a-3c4f-4f62-8aed-894e85f1fc72" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +25,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/Player/PlayerFn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/01. Scripts/UI/InventoryUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -131,6 +125,7 @@
       <workItem from="1749516862901" duration="35000" />
       <workItem from="1749516940166" duration="1085000" />
       <workItem from="1749521857582" duration="8775000" />
+      <workItem from="1749599952017" duration="18155000" />
     </task>
     <servers />
   </component>
